@@ -6,7 +6,7 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up Form'),
+        title: const Text('Sign Up Form'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +28,7 @@ class SignupPage extends StatelessWidget {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   TextFormField(
                     decoration: const InputDecoration(
                       labelText: 'Email Address',
@@ -37,7 +37,7 @@ class SignupPage extends StatelessWidget {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   TextFormField(
                     decoration: const InputDecoration(
                       labelText: 'Password',
@@ -48,13 +48,13 @@ class SignupPage extends StatelessWidget {
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   TextButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.grey[200],
                     ),
-                    child: Text('Sign Up'),
+                    child: const Text('Sign Up'),
                   ),
                 ],
               ),
