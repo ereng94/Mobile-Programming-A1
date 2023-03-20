@@ -1,18 +1,21 @@
 import 'package:a_1/change-password.dart';
 import 'package:a_1/forgot-password.dart';
+import 'package:a_1/home.dart';
 import 'package:a_1/sign-up.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Login Form'),
+        title: const Text('Login Form'),
+        backgroundColor: Colors.grey[800],
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
@@ -44,11 +47,15 @@ class LoginPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10.0),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => home()));
+                    },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.grey[800],
                     ),
-                    child: Text('Login'),
+                    child: const Text('Login'),
                   ),
                   Builder(
                     builder: (context) => ElevatedButton(
@@ -57,7 +64,10 @@ class LoginPage extends StatelessWidget {
                             context,
                             MaterialPageRoute(builder: (context) => ForgetPasswordPage()));
                       },
-                      child: Text('Forgot Password?'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
+                      ),
+                      child: const Text('Forgot Password?'),
                     ),
                   ),
                   Builder(
@@ -67,17 +77,23 @@ class LoginPage extends StatelessWidget {
                             context,
                             MaterialPageRoute(builder: (context) => ChangePasswordPage()));
                       },
-                      child: Text('Change Password?'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
+                      ),
+                      child: const Text('Change Password?'),
                     ),
                   ),
                   Builder(
-                    builder: (context) => TextButton(
+                    builder: (context) => ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => SignupPage()));
                       },
-                      child: Text('Register'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
+                      ),
+                      child: const Text('Register'),
                     ),
                   ),
                 ],

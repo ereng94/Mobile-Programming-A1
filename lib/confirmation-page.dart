@@ -1,3 +1,4 @@
+import 'package:a_1/login.dart';
 import 'package:flutter/material.dart';
 
 class ConfirmationPage extends StatelessWidget {
@@ -5,6 +6,8 @@ class ConfirmationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
         title: const Text('Confirmation'),
       ),
       body: SingleChildScrollView(
@@ -33,16 +36,21 @@ class ConfirmationPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {},
+            ElevatedButton(
+              onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()));
+            },
               style: TextButton.styleFrom(
-                backgroundColor: Colors.grey[200],
+                backgroundColor: Colors.grey[800],
               ),
               child: Text('Submit'),
             ),
           ],
         ),
       ),
+      backgroundColor: Colors.grey[200],
     );
   }
 }

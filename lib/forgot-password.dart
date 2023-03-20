@@ -1,3 +1,5 @@
+import 'package:a_1/confirmation-page.dart';
+import 'package:a_1/home.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordPage extends StatelessWidget {
@@ -7,15 +9,17 @@ class ForgetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Forget Password'),
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
+        title: const Text('Forget Password'),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
+          padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -25,12 +29,28 @@ class ForgetPasswordPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
-                  //TODO: Add functionality to reset password
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ConfirmationPage()));
                 },
-                child: Text('Reset Password'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey[800],
+                ),
+                child: const Text('Reset Password'),
               ),
+              Builder(builder: (context) => ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => home()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey[800],
+                ),
+                child: const Text('Back to Homepage'),
+              ),)
             ],
           ),
         ),

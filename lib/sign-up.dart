@@ -6,6 +6,8 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
         title: const Text('Sign Up Form'),
       ),
       body: SingleChildScrollView(
@@ -50,16 +52,16 @@ class SignupPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10.0),
                   Builder(
-                    builder: (context) => TextButton(
+                    builder: (context) => ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => SuccessfulRegisteredPage()));
                       },
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.grey[200],
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
                       ),
-                      child: Text('Register'),
+                      child: const Text('Register'),
                     ),
                   ),
                 ],

@@ -1,10 +1,14 @@
+import 'package:a_1/login.dart';
 import 'package:flutter/material.dart';
 
 class ChangePasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
         title: const Text('Change Password'),
       ),
       body: SingleChildScrollView(
@@ -34,13 +38,17 @@ class ChangePasswordPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
+            Builder(builder: (context) => ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey[200],
+                backgroundColor: Colors.grey[800],
               ),
               child: const Text('Submit'),
-            ),
+            ),)
           ],
         ),
       ),

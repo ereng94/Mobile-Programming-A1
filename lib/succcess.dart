@@ -8,11 +8,13 @@ class SuccessfulRegisteredPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
         title: const Text('Successful Registered'),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
+          padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -31,7 +33,10 @@ class SuccessfulRegisteredPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(builder: (context) => LoginPage()));
                   },
-                  child: Text('Go to Login Page'),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.grey[800],
+                  ),
+                  child: const Text('Go to Login Page'),
                 ),
               ),
             ],
