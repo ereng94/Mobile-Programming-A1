@@ -1,3 +1,6 @@
+import 'package:a_1/change-password.dart';
+import 'package:a_1/forgot-password.dart';
+import 'package:a_1/sign-up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -47,9 +50,35 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: Text('Login'),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('Forgot Password?'),
+                  Builder(
+                    builder: (context) => ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ForgetPasswordPage()));
+                      },
+                      child: Text('Forgot Password?'),
+                    ),
+                  ),
+                  Builder(
+                    builder: (context) => ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ChangePasswordPage()));
+                      },
+                      child: Text('Change Password?'),
+                    ),
+                  ),
+                  Builder(
+                    builder: (context) => TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignupPage()));
+                      },
+                      child: Text('Register'),
+                    ),
                   ),
                 ],
               ),

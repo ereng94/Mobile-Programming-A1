@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:a_1/succcess.dart';
 
 class SignupPage extends StatelessWidget {
   @override
@@ -49,12 +49,18 @@ class SignupPage extends StatelessWidget {
                     obscureText: true,
                   ),
                   const SizedBox(height: 10.0),
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.grey[200],
+                  Builder(
+                    builder: (context) => TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SuccessfulRegisteredPage()));
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey[200],
+                      ),
+                      child: Text('Register'),
                     ),
-                    child: const Text('Sign Up'),
                   ),
                 ],
               ),

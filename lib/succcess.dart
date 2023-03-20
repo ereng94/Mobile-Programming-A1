@@ -1,3 +1,4 @@
+import 'package:a_1/login.dart';
 import 'package:flutter/material.dart';
 
 class SuccessfulRegisteredPage extends StatelessWidget {
@@ -23,11 +24,15 @@ class SuccessfulRegisteredPage extends StatelessWidget {
                 style: TextStyle(fontSize: 18),
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  //TODO: Add functionality to navigate back to login page
-                },
-                child: const Text('Go to Login Page'),
+              Builder(
+                builder: (context) => ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
+                  child: Text('Go to Login Page'),
+                ),
               ),
             ],
           ),
